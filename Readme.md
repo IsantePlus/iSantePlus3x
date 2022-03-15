@@ -16,11 +16,6 @@ http://o3-dev.docs.openmrs.org/#/main/distribution
 
 ## Instructions
 
-### Install `openmrs` Node.js package
-```sh
-npm install -g openmrs@next
-```
-
 ### Create a folder for the repository
 ```sh
 mkdir iSantePlus3x
@@ -34,6 +29,10 @@ This command uses the `openmrs` Node.js package that can be found here: https://
 npx openmrs build --spa-path /isanteplus --api-url https://isanteplus.sedish-haiti.org/openmrs --config-url config.json --importmap importmap.json
 ```
 
+```sh
+npx openmrs build --config-url config.json --importmap importmap.json
+```
+
 ### Create an Import Map using Interactive Tool
 ```sh
 npx openmrs assemble --config ./build-config.json --mode config  
@@ -45,7 +44,7 @@ npx openmrs assemble --config ./build-config.json --mode config
 {}
 ```
 
-### Start Locally
+### Boot up iSantePlus
 ```sh
-npx openmrs start --port 8080 --backend https://isanteplus.sedish-haiti.org/openmrs
-``` 
+docker-compose up -d 
+```
