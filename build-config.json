@@ -24,6 +24,13 @@
     "@openmrs/esm-patient-list-app": "latest",
     "@openmrs/esm-active-visits-app": "latest",
     "@openmrs/esm-devtools-app": "latest",
-    "@openmrs/esm-implementer-tools-app": "latest"
+    "@openmrs/esm-implementer-tools-app": "latest",
+    "@openmrs/esm-patient-queue-app": "latest",
+    "@openmrs/esm-dispensing-app": "latest",
+    "@openmrs/esm-outpatient-app": "latest",
+    "@openmrs/esm-login-app": "latest",
+    "@openmrs/esm-primary-navigation-app": "latest",
+    "@openmrs/esm-generic-patient-widgets-app": "latest",
+    "@openmrs/esm-offline-tools-app": "latest"
   }
 }
