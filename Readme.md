@@ -1,2 +1,5 @@
-# Isante3x-traefik
-Running Isante3x with traefik as reverse proxy
+# Isante3x 
+
+Packaged distribution with iSantePlus and the OpenMRS 3.x frontend. S
+
+See https://github.com/IsantePlus/iSantePlus3x/wiki/OpenMRS-3.x-&-iSantePlus:-A-Tutorial for more details!
