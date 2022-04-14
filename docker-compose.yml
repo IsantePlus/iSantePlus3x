@@ -23,7 +23,7 @@ services:
   isanteplus:
     container_name: isanteplus
     hostname: isanteplus
-    image: ghcr.io/isanteplus/docker-isanteplus-server:v2.2.2
+    image: ghcr.io/isanteplus/docker-isanteplus-server:v2.3.0
     restart: unless-stopped
     env_file:
       - ./isanteplus.env
@@ -35,9 +35,7 @@ services:
       driver: "json-file"
       options:
         max-size: "10m"
-    # ports:
-    # - "8080:8080"
-    # - "1044:1044"
+
     labels:
       - 'traefik.enable=true'
       - 'traefik.http.routers.isanteplus.rule=Host(`iplus3.openelis-global.org`) && PathPrefix(`/openmrs`)'
