@@ -1,13 +1,29 @@
 version: "3.9"
 
 services:
+###
+  # reverse proxy
+  ###
+  traefik:
+    image: traefik:v2.6.1
+    container_name: traefik
+    ports:
+      - '80:80'
+      - '443:443'
+      - '8080:8080'
+    volumes:
+      - ./certs/:/etc/certs/       
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./configs/conf.yaml:/conf/conf.yaml  
+      - ./configs/traefik.yaml:/etc/traefik/traefik.yaml
+    
   ###
   # iSantePlus Server
   ###
   isanteplus:
     container_name: isanteplus
     hostname: isanteplus
-    image: ghcr.io/isanteplus/docker-isanteplus-server:${ISANTEPLUS_DOCKER_VERSION}
+    image: ghcr.io/isanteplus/docker-isanteplus-server:v2.2.2
     restart: unless-stopped
     env_file:
       - ./isanteplus.env
@@ -19,12 +35,19 @@ services:
       driver: "json-file"
       options:
         max-size: "10m"
-    ports:
-    - "8080:8080"
-    - "1044:1044"
-
+    # ports:
+    # - "8080:8080"
+    # - "1044:1044"
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.isanteplus.rule=Host(`iplus3.openelis-global.org`) && PathPrefix(`/openmrs`)'
+      - 'traefik.http.routers.isanteplus.tls=true'
+      - 'traefik.http.routers.isanteplus.entrypoints=https'
+      # - 'traefik.http.routers.isanteplus.middlewares=isanteplus-stripprefix'
+      # - 'traefik.http.middlewares.isanteplus-stripprefix.stripprefix.prefixes=/openmrs'
+      
   isanteplus-mysql:
-    image: ghcr.io/isanteplus/docker-isanteplus-db:${ISANTEPLUS_DB_VERSION}
+    image: ghcr.io/isanteplus/docker-isanteplus-db:v2.2.1
     command: mysqld --character-set-server=utf8 --collation-server=utf8_general_ci --sql_mode=""
     restart: unless-stopped
     container_name: isanteplus-mysql
