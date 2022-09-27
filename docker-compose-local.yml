@@ -7,24 +7,24 @@ services:
   backend:
     container_name: isanteplus
     hostname: backend
-    image: ghcr.io/isanteplus/docker-isanteplus-server:${ISANTEPLUS_DOCKER_VERSION}
+    image: ghcr.io/isanteplus/docker-isanteplus-server:pr-19
     restart: unless-stopped
     env_file:
       - ./isanteplus.env
     volumes:
       - /openmrs/data
       #- ./custom_modules:/custom_modules
-      - ./dist:/openmrs/data/frontend
+      #- ./dist:/openmrs/data/frontend
     logging:
       driver: "json-file"
       options:
         max-size: "10m"
     ports:
-    - "8080:8080"
+    #- "8080:8080"
     - "1044:1044"
 
   isanteplus-mysql:
-    image: ghcr.io/isanteplus/docker-isanteplus-db:${ISANTEPLUS_DB_VERSION}
+    image: ghcr.io/isanteplus/docker-isanteplus-db:pr-6
     command: mysqld --character-set-server=utf8 --collation-server=utf8_general_ci --sql_mode=""
     restart: unless-stopped
     container_name: isanteplus-mysql
