@@ -9,6 +9,7 @@ services:
     hostname: backend
     image: ghcr.io/isanteplus/docker-isanteplus-server:pr-19
     restart: unless-stopped
+    #platform: linux/amd64
     env_file:
       - ./isanteplus.env
     volumes:
@@ -29,6 +30,7 @@ services:
     restart: unless-stopped
     container_name: isanteplus-mysql
     hostname: isanteplus-mysql
+    #platform: linux/amd64
     healthcheck:
       test: "exit 0"
     environment:
@@ -57,7 +59,9 @@ services:
     environment:
       SPA_PATH: /openmrs/spa
       API_URL: /openmrs
-      SPA_CONFIG_URLS: 
+      SPA_CONFIG_URLS: /openmrs/spa/config.json
+    volumes:
+       - ./config.json:/usr/share/nginx/html/config.json
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost/"]
 
