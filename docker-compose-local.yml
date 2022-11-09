@@ -62,6 +62,7 @@ services:
       SPA_CONFIG_URLS: /openmrs/spa/config.json
     volumes:
        - ./config.json:/usr/share/nginx/html/config.json
+       - ./build-config.json:/usr/share/nginx/html/importmap.json
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost/"]
 
