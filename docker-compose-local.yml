@@ -55,13 +55,15 @@ services:
       - "80:80"
 
   frontend:
-    image: openmrs/openmrs-reference-application-3-frontend:nightly
+    #image: openmrs/openmrs-reference-application-3-frontend:nightly
+    image : ghcr.io/isanteplus/openmrs-distro-isanteplus-frontend:3.x
     environment:
       SPA_PATH: /openmrs/spa
       API_URL: /openmrs
       SPA_CONFIG_URLS: /openmrs/spa/config.json
     volumes:
        - ./config.json:/usr/share/nginx/html/config.json
+       #- ./build-config.json:/usr/share/nginx/html/importmap.json
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost/"]
 
