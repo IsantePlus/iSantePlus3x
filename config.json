@@ -1,19 +1,29 @@
 {
-    "@openmrs/esm-styleguide": {
-        "Brand color #1": "#718bb7",
-        "Brand color #2": "#363463",
-        "Brand color #3": "#363463"
-      },
-      "@openmrs/esm-login-app": {
-        "logo": {
-          "src": "/openmrs/ms/uiframework/resource/isanteplus/images/isanteplus_logo_120x42.png",
-          "alt": "IsantePlus Logo"
-        }
-      },
-      "@openmrs/esm-primary-navigation-app": {
-        "logo": {
-          "src": "/openmrs/ms/uiframework/resource/isanteplus/images/isanteplus_logo_120x42.png",
-          "alt": "IsantePlus Logo"
-        }
+  "@openmrs/esm-styleguide": {
+    "Brand color #1": "#718bb7",
+    "Brand color #2": "#363463",
+    "Brand color #3": "#363463"
+  },
+  "@openmrs/esm-login-app": {
+    "logo": {
+      "src": "/openmrs/ms/uiframework/resource/isanteplus/images/isanteplus_logo_120x42.png",
+      "alt": "IsantePlus Logo"
+    }
+  },
+  "@openmrs/esm-primary-navigation-app": {
+    "logo": {
+      "src": "/openmrs/ms/uiframework/resource/isanteplus/images/isanteplus_logo_120x42.png",
+      "alt": "IsantePlus Logo"
+    }
+  },
+  "@openmrs/esm-patient-chart-app": {
+    "extensionSlots": {
+      "patient-chart-ed-dashboard-slot": {
+        "add": [
+          "biometrics-overview-widget",
+          "vitals-overview-widget"
+        ]
       }
+    }
   }
+}

@@ -20,9 +20,9 @@ services:
       driver: "json-file"
       options:
         max-size: "10m"
-    ports:
+    # ports:
     #- "8080:8080"
-    - "1044:1044"
+    #- "1044:1044"
 
   isanteplus-mysql:
     image: ghcr.io/isanteplus/docker-isanteplus-db:pr-6
@@ -51,6 +51,8 @@ services:
     depends_on:
       - frontend
       - backend
+   #volumes:
+   # - ./configs/nginx.conf:/etc/nginx/nginx.conf
     ports:
       - "80:80"
 
