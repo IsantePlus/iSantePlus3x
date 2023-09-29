@@ -7,7 +7,7 @@ services:
   backend:
     container_name: isanteplus
     hostname: backend
-    image: ghcr.io/isanteplus/docker-isanteplus-server:pr-19
+    image: ghcr.io/isanteplus/docker-isanteplus-server:platform_2.1.x
     restart: unless-stopped
     #platform: linux/amd64
     env_file:
