@@ -23,7 +23,13 @@
       "src": "/openmrs/ms/uiframework/resource/isanteplus/images/isanteplus_logo_120x42.png",
       "alt": "IsantePlus Logo" ,
        "name": "IsantePlus Logo"
-    }
+    },
+    "externalRefLinks": [
+      {
+        "title": "2.x home page",
+        "redirect": "/openmrs/referenceapplication/home.page"
+      }
+    ]
   },
   "@openmrs/esm-patient-chart-app": {
     "extensionSlots": {
