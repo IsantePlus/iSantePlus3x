@@ -11,13 +11,6 @@
        "name": "IsantePlus Logo"
     }
   },
-  "@openmrs/esm-patient-chart-app": {
-    "logo": {
-      "src": "/openmrs/ms/uiframework/resource/isanteplus/images/isanteplus_logo_120x42.png",
-      "alt": "IsantePlus Logo",
-      "name": "IsantePlus Logo"
-    }
-  },
   "@openmrs/esm-primary-navigation-app": {
     "logo": {
       "src": "/openmrs/ms/uiframework/resource/isanteplus/images/isanteplus_logo_120x42.png",
@@ -32,6 +25,11 @@
     ]
   },
   "@openmrs/esm-patient-chart-app": {
+    "logo": {
+      "src": "/openmrs/ms/uiframework/resource/isanteplus/images/isanteplus_logo_120x42.png",
+      "alt": "IsantePlus Logo",
+      "name": "IsantePlus Logo"
+    },
     "extensionSlots": {
       "patient-chart-ed-dashboard-slot": {
         "add": [
